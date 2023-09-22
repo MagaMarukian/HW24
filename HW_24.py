@@ -35,43 +35,43 @@
 #            72 -> LXXII,
 #            9 -> IX:
 
-def arabic_num(n: int):
-    def default_logic(i, a):
-        r_number = ''
-        default_num = {1: 'I',
-                       5: 'V',
-                       10: 'X',
-                       50: 'L',
-                       100: 'C', 
-                       500: 'D', 
-                       1000: 'M'}
-        if i < 4:
-            r_number += i * default_num[1 * a]
-        elif i == 4:
-            r_number += default_num[1 * a] + default_num[5 * a]
-        elif i == 5:
-            r_number += default_num[5 * a]
-        elif i <= 8:
-            r_number += default_num[5 * a] + (i - 5) * default_num[1 * a]
-        elif i == 9:
-            r_number += default_num[10 * a] + default_num[1 * a]
-        return r_number
+# def arabic_num(n: int):
+#     def default_logic(i, a):
+#         r_number = ''
+#         default_num = {1: 'I',
+#                        5: 'V',
+#                        10: 'X',
+#                        50: 'L',
+#                        100: 'C', 
+#                        500: 'D', 
+#                        1000: 'M'}
+#         if i < 4:
+#             r_number += i * default_num[1 * a]
+#         elif i == 4:
+#             r_number += default_num[1 * a] + default_num[5 * a]
+#         elif i == 5:
+#             r_number += default_num[5 * a]
+#         elif i <= 8:
+#             r_number += default_num[5 * a] + (i - 5) * default_num[1 * a]
+#         elif i == 9:
+#             r_number += default_num[10 * a] + default_num[1 * a]
+#         return r_number
     
-    roman_num = ''
-    c = (n - 1000 * (n // 1000)) // 100
-    d = (n - (n // 100) * 100) // 10
-    j = n % 10
-    if n <= 3999:
-        if n // 1000 >= 1:
-            roman_num += n // 1000 * 'M'
-        if c >= 1:
-            roman_num += default_logic(c, 100)
-        if d >= 1:
-            roman_num += default_logic(d, 10)
-        if j >= 1:
-            roman_num += default_logic(j, 1)
-        return roman_num
-    else:
-        raise ValueError
-print(arabic_num(600)) 
+#     roman_num = ''
+#     c = (n - 1000 * (n // 1000)) // 100
+#     d = (n - (n // 100) * 100) // 10
+#     j = n % 10
+#     if n <= 3999:
+#         if n // 1000 >= 1:
+#             roman_num += n // 1000 * 'M'
+#         if c >= 1:
+#             roman_num += default_logic(c, 100)
+#         if d >= 1:
+#             roman_num += default_logic(d, 10)
+#         if j >= 1:
+#             roman_num += default_logic(j, 1)
+#         return roman_num
+#     else:
+#         raise ValueError
+# print(arabic_num(600)) 
 
