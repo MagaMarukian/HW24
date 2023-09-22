@@ -52,7 +52,7 @@ def arabic_num(n: int):
         elif i == 5:
             r_number += default_num[5 * a]
         elif i <= 8:
-            r_number += default_num[5 * a] + (i - 5 * a) * default_num[1 * a]
+            r_number += default_num[5 * a] + (i - 5) * default_num[1 * a]
         elif i == 9:
             r_number += default_num[10 * a] + default_num[1 * a]
         return r_number
@@ -73,5 +73,5 @@ def arabic_num(n: int):
         return roman_num
     else:
         raise ValueError
-print(arabic_num(400)) 
+print(arabic_num(600)) 
 
